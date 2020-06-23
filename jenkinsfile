@@ -1,0 +1,43 @@
+node() {  
+    stage('构建') { 
+        // 
+        echo 'build'
+    }
+    stage('测试') { 
+        // test
+        echo 'test'
+		//bat label: '', script: 'netstat -ano |findstr 8080'
+		//bat  'robot -P . tc'
+		bat 'netstat -ano |findstr 8080'
+    }
+    stage('部署') { 
+        // 
+       echo  'deploy'
+    }
+    stage('验收') { 
+        // 
+        echo 'test'
+		mail bcc: '', body: 'test  pip  ', cc: '', from: 'zzjing1224@163.com', replyTo: '', subject: 'test', to: '2595175761@qq.com'
+    }
+	}
+	
+	
+git本地设置	
+1---设置Git的user name和email:
+git config --global user.name "zzjing"
+git config --global user.email "2595175761@qq.com"
+
+
+2---生成SSH密钥过程
+
+1、查看是否已经有了ssh密钥：cd ~/.ssh
+如果没有密钥则不会有此文件夹，有则备份删除。
+2、生存密钥
+ssh-keygen -t rsa -C "2595175761@qq.com"
+ 
+3---关联远程仓库设置
+
+
+git远程仓库设置
+1、配置密钥
+2、创建远程仓库
