@@ -1,4 +1,4 @@
-node() {  
+node('jing-centos6') {  
     stage('构建') { 
         // 
         echo 'build'
@@ -9,6 +9,7 @@ node() {
 		//bat label: '', script: 'netstat -ano |findstr 8080'
 		//bat  'robot -P . tc'
 		bat 'netstat -ano |findstr 8080'
+		sh 'echo case001 >> suite.txt'
     }
     stage('部署') { 
         // 
@@ -21,3 +22,6 @@ node() {
     }
 	}
 	
+
+
+
