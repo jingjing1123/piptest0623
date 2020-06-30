@@ -1,4 +1,4 @@
-node('jing-centos6') {  
+node('jing-centos6') { 
     stage('构建') { 
         // 
         echo 'build'
@@ -8,7 +8,7 @@ node('jing-centos6') {
         echo 'test'
 		//bat label: '', script: 'netstat -ano |findstr 8080'
 		//bat  'robot -P . tc'
-		bat 'netstat -ano |findstr 8080'
+		//bat 'netstat -ano |findstr 8080'
 		sh 'echo case001 >> suite.txt'
     }
     stage('部署') { 
@@ -18,7 +18,7 @@ node('jing-centos6') {
     stage('验收') { 
         // 
         echo 'test'
-		mail bcc: '', body: 'test  pip  ', cc: '', from: 'zzjing1224@163.com', replyTo: '', subject: 'test', to: '2595175761@qq.com'
+		//mail bcc: '', body: 'test  pip  ', cc: '', from: 'zzjing1224@163.com', replyTo: '', subject: 'test', to: '2595175761@qq.com'
     }
 	}
 	
