@@ -1,4 +1,4 @@
-node('jing-centos6') { 
+node('ubentu') { 
     stage('构建') { 
         // 
         echo 'build'
